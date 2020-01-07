@@ -1,6 +1,6 @@
-# python60days
+python60days
 
-## python基础学习中记录：
+python基础学习中记录：
 以‘#’标记重难点问题
 以‘dayX’标记我第几天学习
 
