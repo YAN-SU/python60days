@@ -1,2 +1,44 @@
 # 【Python 第 55 课】 正则表达式(1)
 ## 今天学习正则表达式
+
+#最简单的版本
+import re
+text = 'Hi, I am Shirley Hilton. I am his wife.'
+m = re.findall(r'hi', text)
+if m :
+    print m
+else:
+    print 'not match'
+#输出结果是 hi，hi
+    
+#如果我们只想找到“hi”这个单词，而不把包含它的单词也算在内，那就可以使 用“\bhi\b”这个正则表达式。
+# \b 在正则表达式中表示单词的开头或结尾，空格、标点、换行都算是单词的 分割。
+import re
+text = 'Hi, I am Shirley Hilton. I am his wife.'
+m = re.findall(r'\bhi\b', text) 
+if m :
+    print m
+else:
+    print 'not match'
+#输出结果是 not match
+
+#把hi改为Hi
+import re
+text = 'Hi, I am Shirley Hilton. I am his wife.'
+m = re.findall(r'\bHi\b', text)
+if m :
+    print m
+else:
+    print 'not match'
+#输出结果是 Hi
+
+#最后再说一下[]这个符号。在正则表达式中，[]表示满足括号中任一字符。比如 “[hi]”，它就不是匹配“hi”了，而是匹配“h”或者“i”。
+#有点像 或集 的用法。
+import re
+text = 'Hi, I am Shirley Hilton. I am his wife.'
+m = re.findall(r'[Hh]i', text)
+if m :
+    print m
+else:
+    print 'not match'
+#输出结果是 ['Hi', 'hi', 'Hi', 'hi']
