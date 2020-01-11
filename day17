@@ -1,0 +1,9 @@
+#随机数
+
+0/有几种表达方式，都是random.xxxx（）完成
+
+1/如果你在程序中需要其中某一个方法，也可以这样写:
+from random import randint
+randint(1, 10)
+
+2/在随机数中有个 seed 的概念，需要一个真实的随机数，比如此刻的时间、鼠标的位置等等，以此为基础产生伪随机数。在 python 中，默认用 系统时间作为seed。你也可以手动调用 random.seed(x)来指定 seed。
